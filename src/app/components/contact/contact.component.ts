@@ -132,7 +132,7 @@ type FormState = 'idle' | 'sending' | 'success' | 'error';
 export class ContactComponent {
   readonly i18n = inject(I18nService);
 
-  // You can change this to K-FORGE's actual email
+  // You can change this to K-Forge's actual email
   private readonly DESTINATION_EMAIL = 'kforge.dev@gmail.com';
 
   formState = signal<FormState>('idle');
@@ -154,9 +154,9 @@ export class ContactComponent {
     formData.append('message', this.message.trim());
     formData.append('_captcha', 'false');
     formData.append('_template', 'table');
-    formData.append('_subject', `K-FORGE: Nuevo mensaje de ${this.name.trim()}`);
+    formData.append('_subject', `K-Forge: Nuevo mensaje de ${this.name.trim()}`);
     formData.append('_autoresponse',
-      `¡Hola ${this.name.trim()}! Hemos recibido tu mensaje en K-FORGE. Te responderemos pronto. 🔥`
+      `¡Hola ${this.name.trim()}! Hemos recibido tu mensaje en K-Forge. Te responderemos pronto. 🔥`
     );
 
     try {

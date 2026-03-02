@@ -1,14 +1,14 @@
 <p align="center">
-	<img src="https://capsule-render.vercel.app/api?type=waving&height=180&text=K-FORGE%20HOME&fontAlign=50&fontAlignY=35&color=8B5CF6&fontColor=ffffff&desc=Web%20oficial%20del%20club%20universitario%20de%20desarrollo%20de%20software&descAlign=50&descAlignY=58&animation=twinkling" alt="K-FORGE Home Banner" />
+	<img src="https://capsule-render.vercel.app/api?type=waving&height=180&text=K-Forge&fontAlign=50&fontAlignY=35&color=8B5CF6&fontColor=ffffff&desc=Web%20oficial%20del%20club%20universitario%20de%20desarrollo%20de%20software&descAlign=50&descAlignY=58&animation=twinkling" alt="K-Forge Banner" />
 </p>
 
 <p align="center">
-	<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=24&duration=2500&pause=1200&color=8B5CF6&center=true&vCenter=true&width=900&lines=Construimos+software+real+en+equipo;Aprendemos+colaborando+con+proyectos+abiertos;K-FORGE+Home%3A+proyectos%2C+prop%C3%B3sito+y+personas" alt="Typing animation" />
+	<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=24&duration=2500&pause=1200&color=8B5CF6&center=true&vCenter=true&width=900&lines=Construimos+software+real+en+equipo;Aprendemos+colaborando+con+proyectos+abiertos;K-Forge%3A+proyectos%2C+prop%C3%B3sito+y+personas" alt="Typing animation" />
 </p>
 
 <p align="center">
 	<a href="https://kforge-home.vercel.app/" target="_blank" rel="noopener noreferrer">
-		<img src="https://img.shields.io/badge/%F0%9F%9A%80%20Ir%20a%20KForge%20Home-8B5CF6?style=for-the-badge&logo=vercel&logoColor=white&labelColor=8B5CF6" alt="Ir a KForge Home" />
+		<img src="https://img.shields.io/badge/%F0%9F%9A%80%20Ir%20a%20K--Forge-8B5CF6?style=for-the-badge&logo=vercel&logoColor=white&labelColor=8B5CF6" alt="Ir a K-Forge" />
 	</a>
 </p>
 
@@ -24,22 +24,22 @@
 
 ---
 
-## ¿Qué es K-FORGE Home?
+## ¿Qué es K-Forge?
 
-K-FORGE Home es la vitrina oficial del club. Centraliza lo que construimos, cómo trabajamos y quiénes forman parte del equipo.
+K-Forge es la vitrina oficial del club. Centraliza lo que construimos, cómo trabajamos y quiénes forman parte del equipo.
 
 ### 🎯 Objetivo
 
 - Mostrar proyectos reales conectados con GitHub.
 - Comunicar misión, enfoque y cultura de colaboración.
-- Presentar al equipo detrás de K-FORGE.
+- Presentar al equipo detrás de K-Forge.
 
 ### 🧩 Secciones del sitio (orden real)
 
 1. **Inicio (Hero):** presentación del club y accesos principales.
 2. **Nosotros:** misión, qué hacemos y por qué unirte.
 3. **Proyectos:** repositorios y trabajo activo del club.
-4. **Equipo:** miembros que impulsan el ecosistema K-FORGE.
+4. **Equipo:** miembros que impulsan el ecosistema K-Forge.
 5. **Contacto:** formulario para unirse o colaborar.
 
 ---
@@ -52,7 +52,7 @@ K-FORGE Home es la vitrina oficial del club. Centraliza lo que construimos, cóm
 
 ## 🚀 Quick Start
 
-Ejecuta estos comandos **dentro de la raíz del proyecto** (`KForge-Home`), donde existen `.nvmrc` y `package.json`.
+Ejecuta estos comandos **dentro de la raíz del proyecto** (`K-Forge`), donde existen `.nvmrc` y `package.json`.
 
 ```bash
 source ~/.nvm/nvm.sh
@@ -89,4 +89,4 @@ bun run build
 	</a>
 </p>
 
-Proyecto bajo licencia [MIT](LICENSE) — K-FORGE 2026.
+Proyecto bajo licencia [MIT](LICENSE) — K-Forge 2026.

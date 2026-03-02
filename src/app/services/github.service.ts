@@ -291,7 +291,7 @@ export class GithubService {
 
   private normalizeRepoLiveDemos(repos: GithubRepo[]): GithubRepo[] {
     return repos.map(repo => {
-      if (repo.name !== 'KForge-Home') {
+      if (repo.name !== 'K-Forge') {
         return repo;
       }
 

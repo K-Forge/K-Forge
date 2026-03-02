@@ -50,7 +50,7 @@ import { GithubIconComponent } from '../../shared/github-icon.component';
         <!-- Bottom line -->
         <div class="mt-6 pt-4 border-t border-surface-light/30 text-center">
           <p class="text-xs text-text-muted/40">
-            &copy; {{ currentYear }} K-FORGE · {{ i18n.t('footer.madeBy') }}
+            &copy; {{ currentYear }} K-Forge · {{ i18n.t('footer.madeBy') }}
             <a href="https://github.com/13rianVargas" target="_blank" rel="noopener"
                class="text-text-muted/60 hover:text-violet-primary transition-colors">
               13rian Vargas

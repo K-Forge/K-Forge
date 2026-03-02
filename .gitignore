@@ -1,44 +1,279 @@
-# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+# ========================
+# OS
+# ========================
 
-# Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
+# macOS
+*.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+Icon?
 
-# Node
-/node_modules
-npm-debug.log
-yarn-error.log
+# Windows
+[Dd]esktop.ini
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
 
-# IDEs and editors
+# Linux
+*~
+.directory
+.Trash-*
+nohup.out
+
+# ========================
+# IDEs & Editors
+# ========================
+
+# JetBrains
 .idea/
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+*.iml
+*.iws
+*.ipr
+out/
 
-# Visual Studio Code
+# VS Code
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/mcp.json
-.history/*
+.history/
 
-# Miscellaneous
+# Eclipse
+.project
+.classpath
+.c9/
+.settings/
+.metadata/
+*.launch
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+*.swp
+*.swo
+Session.vim
+.netrwhist
+
+# Xcode
+xcuserdata/
+DerivedData/
+*.xccheckout
+*.xcscmblueprint
+*.xcarchive
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+
+# ========================
+# Node.js / Web
+# ========================
+
+node_modules/
+jspm_packages/
+bower_components/
+/dist
+/tmp
+/out-tsc
+/bazel-out
+*.js.map
+
+# Angular
 /.angular/cache
 .sass-cache/
 /connect.lock
-/coverage
 /libpeerconnection.log
-testem.log
 /typings
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log
+pnpm-debug.log*
+lerna-debug.log*
+logs/
+
+# Runtime
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Testing & Coverage
+coverage/
+lib-cov/
+.nyc_output
+.jest/
+testem.log
 __screenshots__/
 
-# System files
-.DS_Store
-Thumbs.db
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Bundlers & Frameworks
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.vuepress/dist
+
+# ========================
+# Java / Spring Boot
+# ========================
+
+*.class
+*.jar
+*.war
+*.nar
+*.ear
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+gradle-app.setting
+.gradletasknamecache
+
+# Spring
+spring-shell.log
+HELP.md
+
+# ========================
+# Kotlin
+# ========================
+
+*.kotlin_module
+kotlin-js-store/
+
+# ========================
+# Swift / iOS / macOS
+# ========================
+
+# CocoaPods
+Pods/
+!Podfile.lock
+
+# Carthage
+Carthage/Build/
+Carthage/Checkouts/
+
+# Swift Package Manager
+.build/
+Package.resolved
+*.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/
+Packages/
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# ========================
+# Python
+# ========================
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+
+# ========================
+# Docker
+# ========================
+
+docker-compose.override.yml
+.docker/
+
+# ========================
+# Terraform / IaC
+# ========================
+
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfvars
+
+# ========================
+# Security & Secrets
+# ========================
+
+*.pem
+*.key
+*.cert
+*.p12
+*.jks
+*.keystore
+credentials.json
+secrets.json
+serviceAccountKey.json
+local.properties
+
+# ========================
+# Misc
+# ========================
+
+*.bak
+*.orig
+*.tmp
+*.zip
+*.tar.gz
+*.rar
+*.sqlite
+*.db

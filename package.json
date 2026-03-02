@@ -1,7 +1,7 @@
 {
   "name": "k-forge-web",
   "version": "1.0.0",
-  "description": "Landing page for K-FORGE — university software development club",
+  "description": "Landing page for K-Forge — university software development club",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

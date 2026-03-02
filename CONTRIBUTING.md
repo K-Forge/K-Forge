@@ -1,6 +1,6 @@
-# Contributing to K-FORGE Web
+# Contributing to K-Forge
 
-Gracias por aportar a K-FORGE.
+Gracias por aportar a K-Forge.
 
 ## Antes de empezar
 
