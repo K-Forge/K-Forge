@@ -85,7 +85,7 @@ const translations: Record<string, Record<Lang, string>> = {
         es: 'Llegamos al límite temporal de la API de GitHub.\nIntenta nuevamente en unos minutos.',
         en: 'We hit the temporary GitHub API rate limit.\nPlease try again in a few minutes.',
     },
-    'projects.errorCta': { es: 'Ver repositorio de K-Forge', en: 'View K-Forge repository' },
+    'projects.errorCta': { es: 'Ver repositorios de K-Forge', en: 'View K-Forge repositories' },
     'projects.retry': { es: 'Reintentar', en: 'Retry' },
     'projects.empty': { es: 'No se encontraron proyectos.', en: 'No projects found.' },
 
@@ -111,7 +111,7 @@ const translations: Record<string, Record<Lang, string>> = {
         es: 'Llegamos al límite temporal de la API de GitHub.\nIntenta nuevamente en unos minutos.',
         en: 'We hit the temporary GitHub API rate limit.\nPlease try again in a few minutes.',
     },
-    'team.errorCta': { es: 'Ver repositorio de K-Forge', en: 'View K-Forge repository' },
+    'team.errorCta': { es: 'Ver equipo de K-Forge', en: 'View K-Forge team' },
     'team.retry': { es: 'Reintentar', en: 'Retry' },
     'team.empty': { es: 'No se encontraron integrantes del equipo.', en: 'No team members found.' },
 

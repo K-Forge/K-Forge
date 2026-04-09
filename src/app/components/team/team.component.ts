@@ -2,6 +2,7 @@ import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/cor
 import { GithubService } from '../../services/github.service';
 import { SectionHeaderComponent } from '../../shared/section-header.component';
 import { ApiErrorComponent } from '../../shared/api-error.component';
+import { GithubIconComponent } from '../../shared/github-icon.component';
 import { FadeInDirective } from '../../directives/fade-in.directive';
 import { I18nService, Lang } from '../../services/i18n.service';
 
@@ -9,7 +10,7 @@ import { I18nService, Lang } from '../../services/i18n.service';
   selector: 'app-team',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [FadeInDirective, SectionHeaderComponent, ApiErrorComponent],
+  imports: [FadeInDirective, SectionHeaderComponent, ApiErrorComponent, GithubIconComponent],
   template: `
     <section class="team-people-bg relative px-6 py-20 md:py-24 bg-surface min-h-screen flex items-center">
       <div class="max-w-6xl mx-auto w-full">
@@ -34,13 +35,20 @@ import { I18nService, Lang } from '../../services/i18n.service';
         <!-- Error -->
         @if (membersError()) {
           <app-api-error
-            [errorMessage]="membersError()!"
             [errorTitle]="i18n.t('team.errorTitle')"
             [errorHint]="githubService.getErrorHint(membersError(), 'team')"
             [retryLabel]="i18n.t('team.retry')"
-            [ctaLabel]="i18n.t('team.errorCta')"
-            ctaUrl="https://github.com/K-Forge"
             (retryClicked)="retry()" />
+
+          <div class="text-center mt-8" appFadeIn="up">
+            <a href="https://github.com/K-Forge" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 px-6 py-3 border text-sm font-medium rounded-xl transition-all duration-300
+                      border-violet-primary/50 bg-violet-primary/15 text-violet-glow font-semibold
+                      shadow-[0_0_28px_rgba(139,92,246,0.22)] hover:bg-violet-primary/25">
+              <github-icon [size]="20" />
+              {{ i18n.t('team.errorCta') }}
+            </a>
+          </div>
         }
 
         <!-- Members Grid -->

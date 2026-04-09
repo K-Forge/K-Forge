@@ -1,5 +1,5 @@
 import { Injectable, signal, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { retry, catchError, map, switchMap } from 'rxjs/operators';
 import { of, forkJoin, Observable } from 'rxjs';
 import { GithubRepo } from '../models/github-repo.interface';
@@ -32,6 +32,9 @@ export class GithubService {
   readonly membersLoading = signal(true);
   readonly membersError = signal<string | null>(null);
 
+  private static readonly RATE_LIMIT_ERROR = 'rate_limit';
+  private static readonly UNAVAILABLE_ERROR = 'unavailable';
+
   private get orgReposUrl(): string {
     return `${this.API_BASE}/orgs/${this.GITHUB_ORG}/repos?per_page=100&sort=updated`;
   }
@@ -39,9 +42,8 @@ export class GithubService {
   // ── Public helpers ────────────────────────────────────────────
 
   /** Returns a user-facing hint based on the error message and section context. */
-  getErrorHint(errorMessage: string | null, section: 'projects' | 'team'): string {
-    const isRateLimit = /(403|rate limit|api rate limit exceeded)/i.test(errorMessage ?? '');
-    const key = isRateLimit
+  getErrorHint(errorType: string | null, section: 'projects' | 'team'): string {
+    const key = errorType === GithubService.RATE_LIMIT_ERROR
       ? `${section}.errorRateLimit`
       : `${section}.errorUnavailable`;
     return this.i18n.t(key);
@@ -68,7 +70,7 @@ export class GithubService {
       .pipe(
         retry(2),
         catchError(err => {
-          this.error.set(err?.message || 'Error al cargar proyectos');
+          this.error.set(this.normalizeApiError(err));
           this.loading.set(false);
           return of(null);
         })
@@ -159,7 +161,7 @@ export class GithubService {
           );
         }),
         catchError(err => {
-          this.membersError.set(err?.message || 'Error al cargar equipo');
+          this.membersError.set(this.normalizeApiError(err));
           this.membersLoading.set(false);
           return of(null);
         })
@@ -324,6 +326,23 @@ export class GithubService {
       'Shell': '#89e051',
     };
     return colors[language || ''] || '#8B5CF6';
+  }
+
+  private normalizeApiError(error: unknown): string {
+    if (!(error instanceof HttpErrorResponse)) {
+      return GithubService.UNAVAILABLE_ERROR;
+    }
+
+    if (error.status === 403 || error.status === 429) {
+      return GithubService.RATE_LIMIT_ERROR;
+    }
+
+    const message = `${error.error?.message ?? ''} ${error.message ?? ''}`;
+    if (/rate limit|api rate limit exceeded/i.test(message)) {
+      return GithubService.RATE_LIMIT_ERROR;
+    }
+
+    return GithubService.UNAVAILABLE_ERROR;
   }
 
   // ── Cache helpers ─────────────────────────────────────────────

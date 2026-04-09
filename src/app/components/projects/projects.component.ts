@@ -97,12 +97,9 @@ import { I18nService } from '../../services/i18n.service';
         <!-- Error -->
         @if (error()) {
           <app-api-error
-            [errorMessage]="error()!"
             [errorTitle]="i18n.t('projects.errorTitle')"
             [errorHint]="githubService.getErrorHint(error(), 'projects')"
             [retryLabel]="i18n.t('projects.retry')"
-            [ctaLabel]="i18n.t('projects.errorCta')"
-            ctaUrl="https://github.com/K-Forge"
             (retryClicked)="retry()" />
         }
 
