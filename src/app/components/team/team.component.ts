@@ -3,7 +3,7 @@ import { GithubService } from '../../services/github.service';
 import { SectionHeaderComponent } from '../../shared/section-header.component';
 import { ApiErrorComponent } from '../../shared/api-error.component';
 import { FadeInDirective } from '../../directives/fade-in.directive';
-import { I18nService } from '../../services/i18n.service';
+import { I18nService, Lang } from '../../services/i18n.service';
 
 @Component({
   selector: 'app-team',
@@ -81,7 +81,7 @@ import { I18nService } from '../../services/i18n.service';
                                   bg-surface/50 hover:bg-surface-light/50 transition-colors">
                           <p class="text-text-primary truncate min-w-0 self-center">{{ project.repoName }}</p>
                           <div class="text-right shrink-0 pl-2">
-                            <p class="text-text-muted text-xs whitespace-nowrap">{{ formatActivityDate(project.lastActivityAt) }}</p>
+                            <p class="text-text-muted text-xs whitespace-nowrap">{{ formatActivityDate(project.lastActivityAt, i18n.lang()) }}</p>
                             <p class="text-text-muted text-xs whitespace-nowrap mt-0.5">{{ project.commits }} {{ i18n.t('team.commits') }}</p>
                           </div>
                         </a>
@@ -159,10 +159,15 @@ export class TeamComponent implements OnInit {
     this.githubService.fetchMembers();
   }
 
-  formatActivityDate(value?: string | null): string {
+  formatActivityDate(value: string | null | undefined, lang: Lang): string {
     if (!value) return this.i18n.t('team.noActivity');
 
-    return new Date(value).toLocaleDateString('en-US', {
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return this.i18n.t('team.noActivity');
+
+    const locale = lang === 'es' ? 'es-CO' : 'en-US';
+
+    return date.toLocaleDateString(locale, {
       year: 'numeric',
       month: 'short',
       day: 'numeric',
