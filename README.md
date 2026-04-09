@@ -3,30 +3,24 @@
 </p>
 
 <p align="center">
-	<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=24&duration=2500&pause=1200&color=8B5CF6&center=true&vCenter=true&width=900&lines=Construimos+software+real+en+equipo;Aprendemos+colaborando+con+proyectos+abiertos;K-Forge%3A+proyectos%2C+prop%C3%B3sito+y+personas" alt="Typing animation" />
-</p>
-
-<p align="center">
-	<a href="https://kforge-home.vercel.app/" target="_blank" rel="noopener noreferrer">
-		<img src="https://img.shields.io/badge/%F0%9F%9A%80%20Ir%20a%20K--Forge-8B5CF6?style=for-the-badge&logo=vercel&logoColor=white&labelColor=8B5CF6" alt="Ir a K-Forge" />
-	</a>
-</p>
-
-<p align="center">
-	<a href="https://kforge-home.vercel.app/" target="_blank" rel="noopener noreferrer">
-		<img src="https://img.shields.io/badge/Live%20Preview-8B5CF6?style=flat-square&logo=vercel&logoColor=white" alt="Live Preview" />
-	</a>
-	<img src="https://img.shields.io/badge/Angular%2021-8B5CF6?style=flat-square&logo=angular&logoColor=white" alt="Angular 21" />
-	<img src="https://img.shields.io/badge/Tailwind%20CSS%203-8B5CF6?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS 3" />
-	<img src="https://img.shields.io/badge/Bun-8B5CF6?style=flat-square&logo=bun&logoColor=white" alt="Bun" />
-	<img src="https://img.shields.io/badge/Vercel-8B5CF6?style=flat-square&logo=vercel&logoColor=white" alt="Vercel" />
+	<img src="https://img.shields.io/badge/Estado-Activo-8B5CF6?style=for-the-badge" alt="Estado activo" />
+	<img src="https://img.shields.io/badge/Angular%2021-8B5CF6?style=for-the-badge&logo=angular&logoColor=white" alt="Angular 21" />
+	<img src="https://img.shields.io/badge/Tailwind%20CSS%203-8B5CF6?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS 3" />
+	<img src="https://img.shields.io/badge/Bun-8B5CF6?style=for-the-badge&logo=bun&logoColor=white" alt="Bun" />
+	<img src="https://img.shields.io/badge/Vercel-8B5CF6?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
 </p>
 
 ---
 
-## ¿Qué es K-Forge?
+## Descripción
 
-K-Forge es la vitrina oficial del club. Centraliza lo que construimos, cómo trabajamos y quiénes forman parte del equipo.
+K-Forge es la web oficial del club universitario de desarrollo de software: centraliza nuestros proyectos activos, muestra cómo trabajamos en equipo y presenta a las personas que construyen el ecosistema.
+
+<p align="center">
+	<a href="https://kforge-home.vercel.app/" target="_blank" rel="noopener noreferrer">
+		<img src="https://img.shields.io/badge/%F0%9F%9A%80%20Ir%20a%20la%20web%20oficial%20%28landing%20page%29-8B5CF6?style=for-the-badge&logo=vercel&logoColor=white&labelColor=8B5CF6" alt="Ir a la web oficial (landing page) de K-Forge" />
+	</a>
+</p>
 
 ### 🎯 Objetivo
 
@@ -41,6 +35,17 @@ K-Forge es la vitrina oficial del club. Centraliza lo que construimos, cómo tra
 3. **Proyectos:** repositorios y trabajo activo del club.
 4. **Equipo:** miembros que impulsan el ecosistema K-Forge.
 5. **Contacto:** formulario para unirse o colaborar.
+
+### Proyectos activos del club
+
+K-Forge impulsa proyectos reales desde 2023. Estos son los que están en desarrollo activo:
+
+| Proyecto | Descripción | Stack | Estado |
+|----------|-------------|-------|--------|
+| **KApp** | Plataforma universitaria multicanal (web + movil) para la Konrad Lorenz | Java 21, Spring Boot 3.2 (microservicios), Angular, Kotlin, Swift, PostgreSQL | En desarrollo |
+| **TiendaQ** | E-Commerce universitario de la Konrad Lorenz | Java 25, Spring Boot 4.0, Angular 21, PostgreSQL | En desarrollo |
+| **Roastory** | Sistema de gestión para librería-cafetería (proyecto final NTD) | Por definir | En planeación |
+| **K-Forge Web** | Sitio oficial del club (este repositorio) | Angular 21, Tailwind CSS 3, Bun, Vercel | Activo |
 
 ---
 
@@ -90,3 +95,7 @@ bun run build
 </p>
 
 Proyecto bajo licencia [MIT](LICENSE) — K-Forge 2026.
+
+<p align="center">
+	<img src="https://capsule-render.vercel.app/api?type=waving&height=110&section=footer&color=8B5CF6" alt="K-Forge Footer" width="100%" />
+</p>
