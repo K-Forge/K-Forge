@@ -1,6 +1,6 @@
 import {
   Component, signal, inject, NgZone,
-  OnInit, OnDestroy, afterNextRender, ChangeDetectionStrategy,
+  OnInit, OnDestroy, afterNextRender, ChangeDetectionStrategy, effect
 } from '@angular/core';
 import { HeroComponent } from './components/hero/hero.component';
 import { AboutComponent } from './components/about/about.component';
@@ -9,6 +9,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { TeamComponent } from './components/team/team.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { I18nService } from './services/i18n.service';
+import { GithubService } from './services/github.service';
 
 @Component({
   selector: 'app-root',
@@ -101,7 +102,9 @@ import { I18nService } from './services/i18n.service';
       <!-- ═══ MAIN CONTENT ═══ -->
       <main id="home" class="pt-16">
         <app-hero />
-        <app-about />
+        <div id="about">
+          <app-about />
+        </div>
 
         <!-- Defer heavy components until near viewport -->
         <!-- Wrapper divs carry the IDs so the IntersectionObserver always
@@ -139,6 +142,7 @@ import { I18nService } from './services/i18n.service';
 export class App implements OnInit, OnDestroy {
   readonly i18n = inject(I18nService);
   private readonly ngZone = inject(NgZone);
+  readonly githubService = inject(GithubService);
 
   /** UI state */
   readonly isMenuOpen = signal(false);
@@ -160,6 +164,46 @@ export class App implements OnInit, OnDestroy {
   constructor() {
     // Wait for DOM to be ready before observing sections
     afterNextRender(() => this.setupSectionObserver());
+
+    if (typeof window !== 'undefined') {
+      history.scrollRestoration = 'manual';
+
+      window.addEventListener('beforeunload', () => {
+        const currentHash = window.location.hash || '#' + this.activeSection();
+        const targetId = currentHash.replace('#', '');
+        const el = document.getElementById(targetId);
+        
+        if (el) {
+          const relativeOffset = window.scrollY - el.offsetTop;
+          sessionStorage.setItem('scroll_target', targetId);
+          sessionStorage.setItem('scroll_offset', relativeOffset.toString());
+        }
+      });
+
+      let restored = false;
+      effect(() => {
+        if (!this.githubService.loading() && !this.githubService.membersLoading() && !restored) {
+          restored = true;
+          setTimeout(() => {
+            const hash = window.location.hash;
+            if (hash) {
+              const el = document.getElementById(hash.substring(1));
+              if (el) el.scrollIntoView({ behavior: 'instant' });
+            } else {
+              const targetId = sessionStorage.getItem('scroll_target');
+              const offsetStr = sessionStorage.getItem('scroll_offset');
+              if (targetId && offsetStr) {
+                const el = document.getElementById(targetId);
+                if (el) {
+                  const offset = parseInt(offsetStr, 10);
+                  window.scrollTo({ top: el.offsetTop - 80 + offset, behavior: 'instant' });
+                }
+              }
+            }
+          }, 150);
+        }
+      });
+    }
   }
 
   ngOnInit(): void {

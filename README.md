@@ -1,19 +1,15 @@
 <a id="top"></a>
 
-<div align="center">
-  <table style="border: none; background-color: transparent;">
-    <tr style="border: none; background-color: transparent;">
-      <td align="center" width="20%" style="border: none;">
-        <!-- ESPACIO RESERVADO PARA LOGO OFICIAL K-FORGE -->
-        <img src="./assets/KForge-Yellow-Logo.png" alt="K-Forge Oficial Logo" width="120" style="border-radius: 10px;" />
-      </td>
-      <td align="center" width="80%" style="border: none;">
-        <!-- BANNER CIBERNETICO DEL PROYECTO -->
-        <img src="./assets/project-banner.svg" alt="Banner del Proyecto" width="100%" />
-      </td>
-    </tr>
-  </table>
-</div>
+<table width="100%" style="border: none; background-color: transparent;">
+  <tr style="border: none; background-color: transparent;">
+    <td align="center" width="20%" style="border: none; padding: 0;">
+      <img src="./assets/KForge-Yellow-Logo.png" alt="K-Forge Logo" width="100%" style="max-width: 180px; border-radius: 10px;" />
+    </td>
+    <td align="center" width="80%" style="border: none; padding: 0;">
+      <img src="./assets/project-banner.svg" alt="K-Forge Web Banner" width="100%" />
+    </td>
+  </tr>
+</table>
 
 <p align="center"><strong>Web oficial de K-Forge — club de desarrollo de software de la Fundacion Universitaria Konrad Lorenz.</strong></p>
 
@@ -116,6 +112,12 @@ bun run build
 Repositorio publico para consulta y referencia tecnica.
 
 > Mantenimiento exclusivo de miembros autorizados de K-Forge.
+
+## Autoria
+
+Este repositorio fue construido y es mantenido por [@13rianVargas](https://github.com/13rianVargas).
+
+Si en el futuro otro miembro contribuye de forma significativa al proyecto, ambos deben aparecer en un archivo `CONTRIBUTORS.md` en la raiz del repositorio siguiendo el formato del ecosistema K-Forge.
 
 ## Licencia
 

@@ -9,7 +9,7 @@ import { I18nService } from '../../services/i18n.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [FadeInDirective, SectionHeaderComponent],
   template: `
-    <section id="about" class="about-people-bg relative px-6 py-10 md:py-14 bg-surface flex items-center overflow-hidden">
+    <section class="about-people-bg relative px-6 py-10 md:py-14 bg-surface flex items-center overflow-hidden">
       <div class="max-w-5xl mx-auto w-full">
 
         <!-- Section Header -->
